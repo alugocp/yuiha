@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Yuíha API</title>
+  <link rel="stylesheet" href="styles/decoration.css">
+  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/theme.css">
+</head>
+<body>
+  <div class="header">
+    <div class="brand">
+      <span>
+        <span class="logo">Yuíha</span>
+        by <a href="http://alexlugo.net/webdesign">Alex Lugo</a>
+      </span>
+      <img class="icon" src="res/yuiha.svg">
+    </div>
+    <div class="sections">
+      <a href="#about-header">About</a>
+      <a href="#cdn-header">CDN</a>
+      <a href="#docs-header">Docs</a>
+    </div>
+  </div>
+  <div class="content">
+    <h1 id="about-header">About</h1>
+    <p>
+      Yuíha is a simple JavaScript API that allows you to provide custom translations for webpages.
+      The API lets you define translation sheets, which are strings in multiple different languages associated with common ID's.
+      You can translate any identified piece of text on the page by calling a single function.
+      This makes Yuíha a good API to use for sites that must cater to a multilingual demographic.
+      The simple design means you won't spend hardly any time learning how to use it, and the fact that it runs on jQuery makes it extremely versatile across browsers.
+    </p>
+    <br><br><br>
+    <h1 id="cdn-header">CDN</h1>
+    <p>
+      You can download the Yuíha API for use in your own web projects through its CDN.
+      This gives you full access to Yuíha's functionality, you can create language sheets to translate any site dynamically through JavaScript.
+      To access the API through its CDN, do the following:
+    </p>
+    <div class="code">
+      &lt;script src="https://code.jquery.com/jquery-3.3.1.min.js"&gt;&lt;/script&gt;<br>
+      &lt;script src="https://alugocp.github.io/yuiha/yuiha.js"&gt;&lt;/script&gt;
+    </div>
+    <p>
+      The above code will include jQuery and subsequently Yuíha into your website.
+      Once you've linked to these CDNs, you can begin to utilize Yuíha in your own web project.
+    </p>
+    <br><br><br>
+    <h1 id="docs-header">Docs</h1>
+    <h3>Defining a language sheet</h3>
+    <p>
+      The first step to using Yuíha is to create a language sheet.
+      You can do this either by defining a monolithic sheet:
+    </p>
+    <div class="code">
+      yuiha.key({<br>
+      &emsp;"<i>lang</i>":{<br>
+      &emsp;&emsp;"<i>id</i>":"<i>text</i>",<br>
+      &emsp;&emsp;"<i>id</i>":"<i>text</i>",<br>
+      &emsp;&emsp;...<br>
+      &emsp;},<br>
+      &emsp;"<i>lang</i>":{<br>
+      &emsp;&emsp;"<i>id</i>":"<i>text</i>",<br>
+      &emsp;&emsp;...<br>
+      &emsp;},<br>
+      &emsp;...<br>
+      });
+    </div>
+    <br>
+    <p>
+      Or incrementally by language:
+    </p>
+    <div class="code">
+      yuiha.key("<i>lang</i>",{<br>
+      &emsp;"<i>id</i>":"<i>text</i>",<br>
+      &emsp;...<br>
+      });
+    </div>
+    <br>
+    <h3>Define what text goes where</h3>
+    <p>
+      Once you've defined your own language sheet in Yuíha, you'll want to define which strings belong where.
+      There are two main ways to do this.
+      The first way is to embed your IDs in html tags, like so:
+    </p>
+    <div class="code">
+      &lt;span class="yuiha <i>id</i>"&gt;&lt;/span&gt;
+    </div>
+    <br>
+    <p>
+      The second way is to use the Yuíha API in a script tag:
+    </p>
+    <div class="code">
+      &lt;script&gt;yuiha.text("<i>id</i>",true)&lt;/script&gt;<br>
+      &lt;script&gt;yuiha.text("<i>id</i>",false)&lt;/script&gt;
+    </div>
+    <br>
+    <p>
+      True will create a span wrapper for your translatable content and false creates a div.
+    </p>
+    <br>
+    <h3>Translate your content</h3>
+    <p>
+      Yuíha API makes it easy to translate content on your page, simply run the following command to translate:
+    </p>
+    <div class="code">
+      yuiha.translate("<i>id</i>");
+    </div>
+    <br>
+    <p>
+      And violá, that's all there is to it!
+      You'll probably want to translate your page upon startup to some initial language, so here's how to do that:
+    </p>
+    <div class="code">
+      $(document).ready(function(){<br>
+      &emsp;yuiha.translate("<i>id</i>");<br>
+      });
+    </div>
+    <br><br><br>
+  </div>
+  <img class="decor circle circle-1">
+  <img class="decor circle circle-2">
+  <img class="decor rect rect-1">
+  <img class="decor rect rect-2">
+  <img class="decor rect rect-3">
+  <img class="decor circle circle-3">
+  <img class="decor zigzag zigzag-1">
+</body>
+</html>

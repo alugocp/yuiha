@@ -1,0 +1,15 @@
+:root{
+  --cornfield-blue:#7088e0;
+  --dark-coffee:#845435;
+  --coffee:#b7764b;
+  --white:#eeeeee;
+  --tan:#f4e9e1;
+}
+body{
+  background-color:var(--tan);
+  font-family:sans-serif;
+  color:var(--coffee);
+  overflow-x:hidden;
+  padding:0;
+  margin:0;
+}
